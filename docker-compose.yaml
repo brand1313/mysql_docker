@@ -1,0 +1,15 @@
+version: "3"
+
+services:
+  mysql:
+    build: ./
+    # restart: unless-stopped
+    container_name: test-mysql
+    ports: 
+      - "3306:3306"
+    volumes: 
+      - ./mysql_data:/var/lib/mysql
+    environment: 
+      MYSQL_ROOT_PASSWORD: abcd1234
+      MYSQL_DATABASE: myapp
+
